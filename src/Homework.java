@@ -26,6 +26,7 @@ class Student {
 	
 	@Id private ObjectId id;
 	private String name;
+	private List<Score> scores;
 	
 	public ObjectId getId() {
 		return id;
@@ -39,15 +40,10 @@ class Student {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Score getScores() {
-		return scores;
-	}
-	public void setScores(Score scores) {
-		this.scores = scores;
-	}
-	private Score scores;
 	
-}
+
+	
+
 
 @Embedded
 class Score {
@@ -84,14 +80,9 @@ public class Homework {
 		try {
 			client = new MongoClient();
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
-		//DB db = client.getDB("school");
-		//DBCollection students = db.getCollection("students");
-		//long count = students.count();
-		//System.out.println(count);
-		
 		
 		Morphia morphia = new Morphia();
 		morphia.map(Student.class).map(Score.class);
