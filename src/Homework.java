@@ -24,7 +24,7 @@ import org.mongodb.morphia.query.Query;
 @Entity (value = "students", noClassnameStored = true)
 class Student {
 	
-	@Id private ObjectId id;
+	@Id private int id;
 	private String name;
 	private List<Score> scores;
 	
@@ -72,7 +72,15 @@ class Score {
 public class Homework {
 
 
-	public static void main(String[] args) {
+Student removeLowestHomeWorkScore(Student student) {
+     // check only homework scores returned
+     if (student.scores.length > 1) throw Exception;
+       
+        
+    }
+}
+	
+  public static void main(String[] args) {
 		MongoClient client = null;
 		try {
 			client = new MongoClient();
