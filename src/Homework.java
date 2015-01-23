@@ -42,9 +42,6 @@ class Student {
 	}
 	
 
-	
-
-
 @Embedded
 class Score {
 	private String type;
@@ -85,15 +82,13 @@ public class Homework {
 		}
 		
 		Morphia morphia = new Morphia();
-		morphia.map(Student.class).map(Score.class);
+		morphia.map(Student.class);
 		Datastore ds = morphia.createDatastore(client, "school");
 		
 		Query<Student> query = ds.createQuery(Student.class);
 		Student student = query.get();
 		System.out.println(student.getName());
-		
-		
-		
+
 	}
 
 }
