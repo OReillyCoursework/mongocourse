@@ -11,6 +11,7 @@ import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
+import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
 
 import org.mongodb.morphia.Datastore;
@@ -86,18 +87,19 @@ public class Homework {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		DB db = client.getDB("school");
-		DBCollection students = db.getCollection("students");
-		long count = students.count();
-		System.out.println(count);
+		//DB db = client.getDB("school");
+		//DBCollection students = db.getCollection("students");
+		//long count = students.count();
+		//System.out.println(count);
+		
 		
 		Morphia morphia = new Morphia();
 		morphia.map(Student.class).map(Score.class);
 		Datastore ds = morphia.createDatastore(client, "school");
 		
-		Query query = ds.createQuery(Score.class).filter("type", "homework");
-		Score score = (Score) query.get();
-		System.out.println(score);
+		Query<Student> query = ds.createQuery(Student.class);
+		Student student = query.get();
+		System.out.println(student.getName());
 		
 		
 		
