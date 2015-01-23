@@ -20,7 +20,7 @@ import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.query.Query;
 
-@Entity
+@Entity (value = "students", noClassnameStored = true)
 class Student {
 	
 	@Id private ObjectId id;
