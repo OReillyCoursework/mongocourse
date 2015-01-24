@@ -1,4 +1,5 @@
 import java.net.UnknownHostException;
+
 import com.mongodb.MongoClient;
 
 import org.mongodb.morphia.Datastore;
@@ -23,12 +24,6 @@ public class Homework {
 		morphia.map(Student.class).map(Score.class);
 		Datastore ds = morphia.createDatastore(client, "school");
 		
-		
-		//Query<Student> query = ds.find(Student.class);
-		//for (Student s : query.fetch()) {
-		    
-			//System.out.println(s.getScores());
-		//}
 
 	}
 

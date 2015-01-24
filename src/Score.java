@@ -3,7 +3,8 @@ import org.mongodb.morphia.annotations.Embedded;
 
 @Embedded
 public class Score {
-		private String type;
+		
+	    private String type;
 		private long score;
 		
 		public String getType() {
