@@ -12,7 +12,8 @@ public class Student {
 		
 		@Id private int id;
 		private String name;
-		private Score scores;
+		
+		private List<Score> scores;
 		
 		public int getId() {
 			return id;
@@ -26,8 +27,14 @@ public class Student {
 		public void setName(String name) {
 			this.name = name;
 		}
+		public List<Score> getScores() {
+			return scores;
+		}
+		public void setScores(List<Score> scores) {
+			this.scores = scores;
+		}
 		
-
+      
 	  
 	  
 	
