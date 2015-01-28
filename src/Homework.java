@@ -33,7 +33,7 @@ public class Homework {
         Query <Student> students = ds.find(Student.class);
         for (Student s : students.fetch()) {
         	System.out.println(s.getName());
-        	for ()
+        	
         }
 		
 		/*Query <Student> students = ds.createQuery(Student.class).field("scores.type").equal("homework");//filter("scores.type", "homework").order("scores");
